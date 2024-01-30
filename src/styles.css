@@ -1,26 +1,76 @@
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  h1 {
-    color: #333;
-  }
-  
-  h2 {
-    color: #555;
-  }
-  
-  p {
-    line-height: 1.6;
-    color: #777;
-  }
-  
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  background-image: linear-gradient(to right, #cfd9df, #e2ebf0);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+h2 {
+  color: #555;
+}
+
+p {
+  line-height: 1.6;
+  color: #777;
+}
+
+/* Navigation Bar Styles */
+.navigation-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+  padding: 10px;
+}
+
+.navigation-bar button {
+  background: none; /* No background fill */
+  border: none; /* No border */
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 16px;
+  margin: 0 70px; /* Add some spacing between buttons */
+}
+
+.navigation-bar button:hover {
+  text-decoration: underline;
+}
+
+/* Section Styles */
+section {
+  margin-top: 50px; /* Adjust as needed to account for fixed navigation bar height */
+}
+
+/* PDF Viewer Styles */
+.embed-container {
+  width: 100%;
+  height: 500px;
+}
+
+/* Download Link Styles */
+a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
