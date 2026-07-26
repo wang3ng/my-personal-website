@@ -1,13 +1,16 @@
 import React from 'react';
+
 const Resume = () => {
-    const resumePdfUrl = process.env.PUBLIC_URL + '/Wang\'s Resume.pdf';
+  const resumePdfUrl = process.env.PUBLIC_URL + '/William_Resume.pdf';
   return (
-    <div>
+    <div className="card resume-card">
       <h2>Resume</h2>
-      <embed src={resumePdfUrl} type="application/pdf" width="100%" height="500px" />
+      <div className="embed-container">
+        <embed src={resumePdfUrl} type="application/pdf" width="100%" height="600px" />
+      </div>
       <p>
-        <a href={resumePdfUrl} download>
-          download resume
+        <a className="button-link" href={resumePdfUrl} download>
+          Download Resume (PDF)
         </a>
       </p>
     </div>
