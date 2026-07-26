@@ -19,24 +19,36 @@ const App = () => {
           <Introduction />
         </div>
       </header>
-      <main className="container">
-        <section id="education">
-          <Education />
+      <main>
+        <section id="education" className="section section-white">
+          <div className="container">
+            <Education />
+          </div>
         </section>
-        <section id="experience">
-          <Experience />
+        <section id="experience" className="section section-gray">
+          <div className="container">
+            <Experience />
+          </div>
         </section>
-        <section id="projects">
-          <Projects />
+        <section id="projects" className="section section-white">
+          <div className="container">
+            <Projects />
+          </div>
         </section>
-        <section id="skills">
-          <Skills />
+        <section id="skills" className="section section-gray">
+          <div className="container">
+            <Skills />
+          </div>
         </section>
-        <section id="resume">
-          <Resume />
+        <section id="resume" className="section section-white">
+          <div className="container">
+            <Resume />
+          </div>
         </section>
-        <section id="contact">
-          <Contact />
+        <section id="contact" className="section section-gray">
+          <div className="container">
+            <Contact />
+          </div>
         </section>
       </main>
       <footer className="site-footer">

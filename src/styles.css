@@ -1,11 +1,13 @@
 :root {
-  --color-bg: #f6f8fb;
+  --color-bg: #ffffff;
+  --color-bg-alt: #f5f5f5;
   --color-surface: #ffffff;
   --color-primary: #2563eb;
   --color-primary-dark: #1d4ed8;
-  --color-text: #1f2937;
-  --color-text-muted: #6b7280;
-  --color-border: #e5e7eb;
+  --color-text: #1e1e1e;
+  --color-text-muted: #8c8c8c;
+  --color-border: #dedede;
+  --color-tag-bg: #d9d9d9;
   --shadow-card: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.08);
   --radius: 12px;
 }
@@ -23,7 +25,7 @@ body {
 }
 
 .container {
-  max-width: 900px;
+  max-width: 1120px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -32,17 +34,28 @@ h1 {
   color: #fff;
   text-align: center;
   margin: 0 0 16px;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
+  font-weight: 700;
 }
 
 h2 {
   color: var(--color-text);
   margin-top: 0;
-  font-size: 1.4rem;
-  border-bottom: 2px solid var(--color-primary);
-  display: inline-block;
-  padding-bottom: 4px;
-  margin-bottom: 20px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.section {
+  padding: 48px 0;
+}
+
+.section-white {
+  background-color: var(--color-bg);
+}
+
+.section-gray {
+  background-color: var(--color-bg-alt);
 }
 
 h3 {
@@ -70,17 +83,19 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #111827;
-  padding: 12px 24px;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--color-border);
+  padding: 16px 32px;
   flex-wrap: wrap;
   gap: 8px;
 }
 
 .nav-brand {
-  color: #fff;
+  color: var(--color-text);
   font-weight: 700;
+  font-size: 1.05rem;
   cursor: pointer;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
 .nav-links {
@@ -92,23 +107,25 @@ ul {
 .navigation-bar button {
   background: none;
   border: none;
-  color: #d1d5db;
+  color: var(--color-text-muted);
   cursor: pointer;
   padding: 8px 14px;
   font-size: 0.95rem;
+  font-weight: 500;
   border-radius: 6px;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .navigation-bar button:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-  color: #fff;
+  background-color: var(--color-bg-alt);
+  color: var(--color-primary-dark);
 }
 
 /* Hero */
 .hero {
   background: linear-gradient(135deg, #1d4ed8, #2563eb 60%, #3b82f6);
-  padding: 56px 0 48px;
+  padding: 80px 0 64px;
+  text-align: center;
 }
 
 .card {
@@ -117,51 +134,61 @@ ul {
   border-radius: var(--radius);
   box-shadow: var(--shadow-card);
   padding: 28px 32px;
-  margin: 24px 0;
+  margin: 0;
 }
 
-.intro-card {
-  background: rgba(255, 255, 255, 0.97);
+.intro-content {
   max-width: 700px;
   margin: 0 auto;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.intro-content p {
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .tagline {
-  color: var(--color-primary-dark);
+  color: #fff;
   font-weight: 600;
-  font-size: 1.1rem;
-  margin-bottom: 12px;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
 }
 
 .button-row {
   display: flex;
+  justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 .button-link {
   display: inline-block;
-  background-color: var(--color-primary);
-  color: #fff !important;
+  background-color: #ffffff;
+  color: var(--color-primary-dark) !important;
   text-decoration: none;
   font-weight: 600;
-  padding: 10px 18px;
-  border-radius: 8px;
-  transition: background-color 0.15s ease;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1.5px solid var(--color-primary-dark);
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .button-link:hover {
   background-color: var(--color-primary-dark);
+  color: #fff !important;
   text-decoration: none;
 }
 
 .button-link.secondary {
-  background-color: #374151;
+  background-color: #ffffff;
+  color: var(--color-primary-dark) !important;
+  border: 1.5px solid var(--color-primary-dark);
 }
 
 .button-link.secondary:hover {
-  background-color: #1f2937;
+  background-color: var(--color-primary-dark);
+  color: #fff !important;
 }
 
 /* Timeline (Education / Experience) */
@@ -219,11 +246,11 @@ ul {
 }
 
 .tag {
-  background-color: #eef2ff;
-  color: var(--color-primary-dark);
-  border: 1px solid #c7d2fe;
-  border-radius: 20px;
-  padding: 6px 14px;
+  background-color: var(--color-tag-bg);
+  color: var(--color-text);
+  border: none;
+  border-radius: 999px;
+  padding: 7px 16px;
   font-size: 0.85rem;
   font-weight: 500;
 }
@@ -239,7 +266,8 @@ ul {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 18px 20px;
-  background-color: #fafbff;
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-card);
 }
 
 /* Resume */

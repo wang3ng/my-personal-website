@@ -5,7 +5,7 @@ const Introduction = () => {
   const githubUrl = 'https://github.com/wang3ng';
 
   return (
-    <div className="card intro-card">
+    <div className="intro-content">
       <p className="tagline">
         Applied AI &amp; Robotics Engineer
       </p>
