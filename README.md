@@ -1,6 +1,16 @@
-# Getting Started with Create React App
+# my-personal-website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal portfolio site for Xuyang (William) Wang, built with [Create React App](https://github.com/facebook/create-react-app) and deployed on Netlify.
+
+## Sections
+
+- **Bio** — quick intro and links to LinkedIn/GitHub
+- **Education** — Johns Hopkins University (M.S. Robotics) and NYU (B.S. CS & Data Science)
+- **Experience** — work history
+- **Projects** — research and personal projects
+- **Skills** — technical skills grouped by category
+- **Resume** — embedded, downloadable PDF (`public/William_Resume.pdf`)
+- **Contact** — email and location
 
 ## Available Scripts
 
@@ -8,107 +18,30 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Runs the app in development mode at [http://localhost:3000](http://localhost:3000). The page reloads on changes.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in interactive watch mode.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Builds the app for production to the `build` folder, minified with hashed filenames.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Updating content
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Each section is a standalone component in `src/`:
 
-### `npm run eject`
+- `Introduction.js` — bio/tagline
+- `Education.js` — education history (edit the `educationHistory` array)
+- `Experience.js` — work experience (edit the `experience` array)
+- `Projects.js` — projects (edit the `projects` array)
+- `Skills.js` — skills grouped by category (edit the `skillGroups` array)
+- `Resume.js` — points at the PDF in `public/`
+- `Contact.js` — contact details
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To update the resume, replace `public/William_Resume.pdf` and update the filename reference in `src/Resume.js` if it changes.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Deployment
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
-Education:
-
-Provide details about your current academic institution, your major, and expected graduation date.
-List relevant coursework or academic projects.
-Skills:
-
-Showcase your technical and soft skills.
-Use a visual representation like a skill bar or tag cloud to make it visually appealing.
-Projects:
-
-Create a section to display and describe your academic and personal projects.
-Include project descriptions, technologies used, and any outcomes or results.
-Work Experience:
-
-Highlight any internships, part-time jobs, or relevant work experiences.
-Mention your responsibilities, achievements, and skills gained.
-Achievements:
-
-Include any awards, scholarships, or honors you've received.
-Showcase academic achievements, such as making the Dean's List.
-Extracurricular Activities:
-
-List and briefly describe your involvement in clubs, student organizations, or community service.
-Include any leadership roles or significant contributions.
-Certifications:
-
-If you have obtained any relevant certifications, display them with details about the certification and issuing organization.
-Publications:
-
-If you've published any research papers, articles, or blog posts, provide links or summaries.
-Professional Memberships:
-
-Mention any memberships in professional organizations related to your field of study.
-Languages:
-
-If you are proficient in multiple languages, include a section to showcase your language skills.
-Hobbies/Interests:
-
-Optionally, include a section about your hobbies or interests to provide a more personal touch.
-References:
-
-If you have received positive feedback or recommendations, you can consider adding a references section. Ensure you have permission from the references.
+This site auto-deploys to Netlify on every push to `master`.
