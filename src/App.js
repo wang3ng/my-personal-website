@@ -14,10 +14,12 @@ const App = () => {
   usePageAnimations();
 
   return (
-    <div>
+    <div className="site-shell">
       <NavigationBar />
       <header className="hero" id="introduction">
-        <div className="container">
+        <div className="hero-glow" aria-hidden="true" />
+        <div className="hero-grid" aria-hidden="true" />
+        <div className="container hero-content">
           <h1>Xuyang (William) Wang</h1>
           <Introduction />
         </div>

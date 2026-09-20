@@ -1,15 +1,16 @@
 :root {
-  --color-bg: #ffffff;
-  --color-bg-alt: #f5f5f5;
+  --color-bg: #f4f7fb;
+  --color-bg-alt: #e8eef6;
   --color-surface: #ffffff;
   --color-primary: #2563eb;
   --color-primary-dark: #1d4ed8;
   --color-text: #1e1e1e;
-  --color-text-muted: #8c8c8c;
-  --color-border: #dedede;
-  --color-tag-bg: #d9d9d9;
-  --shadow-card: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.08);
+  --color-text-muted: #5c6570;
+  --color-border: #d5dde8;
+  --color-tag-bg: #e4ebf4;
+  --shadow-card: 0 1px 3px rgba(15, 23, 42, 0.06), 0 8px 24px rgba(15, 40, 80, 0.05);
   --radius: 12px;
+  --noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
 }
 
 * {
@@ -22,6 +23,33 @@ body {
   padding: 0;
   background-color: var(--color-bg);
   color: var(--color-text);
+}
+
+.site-shell {
+  position: relative;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(59, 130, 246, 0.14), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 95% 20%, rgba(14, 116, 144, 0.08), transparent 50%),
+    radial-gradient(ellipse 50% 35% at 50% 100%, rgba(37, 99, 235, 0.06), transparent 55%),
+    linear-gradient(180deg, #f7f9fc 0%, var(--color-bg) 28%, #eef3f9 100%);
+}
+
+.site-shell::before {
+  content: '';
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.035;
+  background-image: var(--noise);
+  background-repeat: repeat;
+  background-size: 180px 180px;
+}
+
+.site-shell > * {
+  position: relative;
+  z-index: 1;
 }
 
 .container {
@@ -48,14 +76,19 @@ h2 {
 
 .section {
   padding: 48px 0;
+  background: transparent;
 }
 
 .section-white {
-  background-color: var(--color-bg);
+  background: transparent;
 }
 
 .section-gray {
-  background-color: var(--color-bg-alt);
+  background: linear-gradient(
+    180deg,
+    rgba(232, 238, 246, 0.55) 0%,
+    rgba(232, 238, 246, 0.35) 100%
+  );
 }
 
 h3 {
@@ -83,8 +116,10 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #ffffff;
-  border-bottom: 1px solid var(--color-border);
+  background-color: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(213, 221, 232, 0.9);
   padding: 16px 32px;
   flex-wrap: wrap;
   gap: 8px;
@@ -123,18 +158,55 @@ ul {
 
 /* Hero */
 .hero {
-  background: linear-gradient(135deg, #1d4ed8, #2563eb 60%, #3b82f6);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse 70% 80% at 15% 20%, rgba(147, 197, 253, 0.35), transparent 50%),
+    radial-gradient(ellipse 55% 60% at 88% 75%, rgba(8, 47, 120, 0.45), transparent 55%),
+    linear-gradient(145deg, #163d9c 0%, #1d4ed8 42%, #2563eb 72%, #3b82f6 100%);
   padding: 80px 0 64px;
   text-align: center;
 }
 
+.hero-glow {
+  position: absolute;
+  inset: -20% -10%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.12), transparent 42%),
+    radial-gradient(circle at 70% 30%, rgba(56, 189, 248, 0.18), transparent 40%);
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.22;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 75% 70% at 50% 45%, #000 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 45%, #000 20%, transparent 75%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
 .card {
-  background: var(--color-surface);
+  background: rgba(255, 255, 255, 0.94);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-card);
   padding: 28px 32px;
   margin: 0;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .intro-content {
@@ -266,8 +338,14 @@ ul {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 18px 20px;
-  background-color: var(--color-surface);
+  background-color: rgba(255, 255, 255, 0.96);
   box-shadow: var(--shadow-card);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-glow {
+    opacity: 0.5;
+  }
 }
 
 /* Resume */
@@ -284,6 +362,8 @@ ul {
   padding: 24px 0 40px;
   color: var(--color-text-muted);
   font-size: 0.85rem;
+  background: transparent;
+  border-top: 1px solid rgba(213, 221, 232, 0.7);
 }
 
 @media (max-width: 640px) {
