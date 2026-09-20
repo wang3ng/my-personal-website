@@ -7,9 +7,12 @@ import Projects from './Projects';
 import Resume from './Resume';
 import Contact from './Contact';
 import NavigationBar from './NavigationBar';
+import usePageAnimations from './usePageAnimations';
 import './styles.css';
 
 const App = () => {
+  usePageAnimations();
+
   return (
     <div>
       <NavigationBar />

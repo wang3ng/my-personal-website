@@ -2,6 +2,16 @@ import React from 'react';
 
 const projects = [
   {
+    title: 'CIS II: EyeRobot and Eye Snake Teleoperation',
+    role: 'Software Integration Lead · SHER 2.1 & I2RIS',
+    dates: 'Jan 2026 – Present',
+    bullets: [
+      'Architected ROS/cisst control for unified EyeRobot (SHER 2.1) and Eye Snake (I2RIS) teleoperation under one operator loop.',
+      'Implemented C++ teleoperation in robotTask.cpp with Geomagic/Phantom ROS and Maxon EPOS packages.',
+      'Delivered SHER_I2RIS_teleoperate launch workflows; fixed mapping, stability, joint limits, and build integration issues.',
+    ],
+  },
+  {
     title: 'Move-Aim-Shoot RL Benchmark',
     role: 'Lead Developer',
     dates: 'Jan 2025 – Present',
@@ -10,16 +20,6 @@ const projects = [
       'Built Gymnasium environments and shared training/evaluation APIs for hybrid and continuous actions.',
       'Implemented feedforward PPO, recurrent PPO with privileged critic (CTDE), asymmetric distillation, and SAC.',
       'Automated fixed-teacher evaluation with multi-seed mean ± 95% CI and robustness tests (~80-93% win rate in ~5k steps).',
-    ],
-  },
-  {
-    title: 'CIS II: EyeRobot and Eye Snake Teleoperation',
-    role: 'Software Integration Lead',
-    dates: 'Jan 2026 – Present',
-    bullets: [
-      'Architected ROS/cisst control for unified EyeRobot (SHER 2.1) and Eye Snake (I2RIS) teleoperation under one operator loop.',
-      'Implemented C++ teleoperation in robotTask.cpp with Geomagic/Phantom ROS and Maxon EPOS packages.',
-      'Delivered SHER_I2RIS_teleoperate launch workflows; fixed mapping, stability, joint limits, and build integration issues.',
     ],
   },
   {
@@ -38,7 +38,7 @@ const Projects = () => {
       <h2>Projects</h2>
       <div className="project-grid">
         {projects.map((project) => (
-          <div className="project-card" key={project.title}>
+          <div className="project-card reveal-item" key={project.title}>
             <div className="timeline-header">
               <h3>{project.title}</h3>
               <span className="timeline-dates">{project.dates}</span>

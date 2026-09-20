@@ -297,3 +297,24 @@ ul {
     padding: 20px;
   }
 }
+
+/* Motion — initial state set by anime.js; reduced-motion fallback */
+.navigation-bar {
+  opacity: 0;
+}
+
+.hero h1,
+.intro-content > * {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navigation-bar,
+  .hero h1,
+  .intro-content > *,
+  .section .card,
+  .reveal-item {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

@@ -14,11 +14,22 @@ const skillGroups = [
       'scikit-learn',
       'LLM Prompting',
       'QLoRA Fine-Tuning',
+      'Experiment Automation',
     ],
   },
   {
-    category: 'Systems',
-    skills: ['ROS / cisst', 'Linux', 'Git', 'Data Pipelines', 'Debugging', 'Visualization'],
+    category: 'Robotics / Systems',
+    skills: [
+      'ROS / cisst',
+      'Geomagic / Phantom',
+      'Maxon EPOS',
+      'Teleoperation',
+      'Linux',
+      'Git',
+      'Data Pipelines',
+      'Debugging',
+      'Visualization',
+    ],
   },
 ];
 
@@ -28,7 +39,7 @@ const Skills = () => {
       <h2>Technical Skills</h2>
       <div className="skills-grid">
         {skillGroups.map((group) => (
-          <div className="skills-group" key={group.category}>
+          <div className="skills-group reveal-item" key={group.category}>
             <h3>{group.category}</h3>
             <div className="tag-cloud">
               {group.skills.map((skill) => (

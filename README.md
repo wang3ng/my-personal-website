@@ -39,6 +39,7 @@ Each section is a standalone component in `src/`:
 - `Skills.js` — skills grouped by category (edit the `skillGroups` array)
 - `Resume.js` — points at the PDF in `public/`
 - `Contact.js` — contact details
+- `usePageAnimations.js` — anime.js hero + scroll reveals (respects `prefers-reduced-motion`)
 
 To update the resume, replace `public/William_Resume.pdf` and update the filename reference in `src/Resume.js` if it changes.
 

@@ -13,9 +13,9 @@ const Introduction = () => {
         I'm a Master's student in Robotics (Mechanical Engineering) at{' '}
         <strong>Johns Hopkins University</strong>, with a B.S. in Computer
         Science &amp; Data Science from <strong>New York University</strong>.
-        I build Python/C++ systems that automate ML workflows, integrate
-        models into robotics pipelines, and quantify impact with
-        reproducible metrics.
+        I build ROS/C++ teleoperation systems, Gymnasium RL benchmarks, and
+        Python pipelines that integrate models into reproducible robot-learning
+        workflows.
       </p>
       <p>
         Currently seeking AI/ML Engineer, Robotics Engineer, and Software

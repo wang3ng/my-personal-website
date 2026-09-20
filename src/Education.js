@@ -22,7 +22,7 @@ const Education = () => {
       <h2>Education</h2>
       <div className="timeline">
         {educationHistory.map((edu) => (
-          <div className="timeline-item" key={edu.school}>
+          <div className="timeline-item reveal-item" key={edu.school}>
             <div className="timeline-header">
               <h3>{edu.school}</h3>
               <span className="timeline-dates">{edu.dates}</span>

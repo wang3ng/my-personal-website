@@ -21,7 +21,7 @@ const Experience = () => {
       <h2>Work Experience</h2>
       <div className="timeline">
         {experience.map((job) => (
-          <div className="timeline-item" key={job.company}>
+          <div className="timeline-item reveal-item" key={job.company}>
             <div className="timeline-header">
               <h3>{job.role}</h3>
               <span className="timeline-dates">{job.dates}</span>
